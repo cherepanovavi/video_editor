@@ -47,7 +47,7 @@ class MainFrame(wx.Frame):
         return v_btn
 
     def add_image_button(self, idx):
-        i_btn = wx.Button(self.images, id=100 + idx, label=self.editor.image_names[idx])
+        i_btn = wx.Button(self.images, id=idx, label=self.editor.image_names[idx])
         self.i_sizer.Add(i_btn)
         i_btn.Bind(wx.EVT_BUTTON, self.change_image_selection)
         self.images.Layout()
