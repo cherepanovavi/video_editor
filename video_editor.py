@@ -109,9 +109,9 @@ class VideoEditor:
         image = self.images_list[image_idx]
         fr_count = round(frames.fps*sec)
         resized = cv2.resize(image.data, (frames.data[0].shape[1], frames.data[0].shape[0]))
-        new_data = []
+        new_data = np.empty(fr_count, dtype=np.ndarray)
         for i in range(fr_count):
-            new_data.append(resized)
+            new_data[i] = resized
         self.frames_list.append(Frames(data=np.concatenate((frames.data, new_data)), fps=frames.fps))
         return len(self.frames_list) - 1
 

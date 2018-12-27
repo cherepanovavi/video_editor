@@ -101,7 +101,7 @@ class MainFrame(wx.Frame):
         dir_path = wx.DirSelector('Choose a folder to save the file')
         if dir_path != '':
             dlg = wx.TextEntryDialog(None, 'Enter new file name', 'Saving file')
-            dlg.SetValue(self.editor.video_names[self.editor.video_idx])
+            dlg.SetValue('{} changes'.format(self.editor.video_idx ))
             if dlg.ShowModal() == wx.ID_OK:
                 file_name = dlg.GetValue()
                 try:
